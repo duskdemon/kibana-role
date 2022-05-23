@@ -1,0 +1,14 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+#  - name: Example assertion
+#    assert:
+#      that: true
+  - name: check if file exists
+    stat:
+      path: /etc/kibana/kibana.yml
+    register: stat_result
